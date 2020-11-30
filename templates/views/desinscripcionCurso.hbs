@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alumnos</title>
+    <link rel="icon" href="img/alumno.jpg">
+    <link rel="stylesheet" href="/css/style.css"> 
+</head>
+<body>
+    <div class="main-content">
+        {{>header}}
+        {{>alumnosHeader}}
+    <img class="portrait" src="/img/palmeras.jpg">
+        <form id="Desinscribir">
+            <input id='matricula' name='matricula' placeholder="Matricula">
+            <input id='clave' name='clave' placeholder="Código de Curso">
+            <button>Dar de baja</button>
+        </form>
+        <p id="message-1"></p>
+    </div>
+    {{>footer}}
+    <script src="/js/desinscribirAlumno.js"></script>
+
+</body>
+</html>

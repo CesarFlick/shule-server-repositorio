@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alumnos</title>
+    <link rel="icon" href="img/alumno.jpg">
+    <link rel="stylesheet" href="/css/style.css"> 
+</head>
+<body>
+    <div class="main-content">
+        {{>header}}
+        {{>alumnosHeader}}
+    <h2>Consultar mis datos</h2>
+            <form id="Consultar">
+                <input id='matricula' name='matricula' placeholder="Matricula">
+                <button>Consultar</button>
+            </form><br><br>
+    </div>
+    <div class="seccion2">
+        <div class="subseccion21">
+            <table id="Alumno" style="width:100%">   
+                <tr>
+                    <th style="width:60%">Nombre:</th>
+                    <td id="nombre"></td>
+                </tr>
+                <tr>
+                    <th>Apellido Paterno:</th>
+                    <td id="apellidoPaterno"></td>      
+                </tr>  
+                <tr>
+                    <th>Apellido Materno:</th>
+                    <td id="apellidoMaterno"></td>
+                </tr>
+                <tr>
+                    <th>Fecha de Nacimiento:</th>
+                    <td id="fechaNacimiento"></td>
+                </tr>
+                <tr>
+                    <th>Carrera:</th>
+                    <td id="carrera"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="subseccion22">
+            <table style="width:80%">
+                <caption>Contacto</caption>
+                <tr>
+                    <th style="width:23%">Teléfono:</th>
+                    <td id="telefono"></td>
+                </tr>
+                <tr>
+                    <th>Email:</th>  
+                    <td id="email"></td>      
+                </tr>  
+            </table>
+        </div>
+        </div> <br>
+        <div class="seccion3">
+            <div class="subseccion31">
+                <table id="tablaDireccion" style="width:100%">
+                    <caption>Dirección</caption>  
+                    <tr>
+                        <th style="width:23%">Calle:</th>
+                        <td id="calle"></td>
+                    </tr>
+                    <tr>
+                        <th>Numero Interior:</th>  
+                        <td id="numInterior"></td>      
+                    </tr>
+                    <tr>
+                        <th>Tipo Unidad:</th>  
+                        <td id="unidad"></td>      
+                    </tr>
+                    <tr>
+                        <th>Numero Exterior:</th>  
+                        <td id="numExterior"></td>      
+                    </tr>
+                    <tr>
+                        <th>Ciudad:</th>  
+                        <td id="ciudad"></td>      
+                    </tr>
+                    <tr>
+                        <th>Estado:</th>  
+                        <td id="estado"></td>      
+                    </tr>
+                    <tr>
+                        <th>Colonia:</th>  
+                        <td id="colonia"></td>      
+                    </tr>
+                </table>
+            </div>
+            <div class="subseccion32">
+                <table style="width:80%">
+                <caption>Cursos</caption>
+                <tr>
+                    <th>Cursos:</th>
+                </tr>
+                <tr>
+                    <td>Biologia</td>
+                </tr>
+            </table>
+
+            </div>
+        </div>
+    <img class="portrait" src="/img/c88c6ddb3f889d2de81cee60d7318617.jpg">
+    </div>
+    {{>footer}}
+    <script src="/js/obtenerAlumnos.js"></script>
+
+</body>
+</html>

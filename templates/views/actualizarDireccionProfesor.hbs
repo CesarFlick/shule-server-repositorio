@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alumnos</title>
+    <link rel="icon" href="img/profesor.jpg">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="main-content">
+        {{>header}}
+        {{>profesoresHeader}}
+    <img class="portrait" src="/img/aristotle.jpg">
+        <form id="Actualizar">
+            <input id='trabajador' name='trabajador' placeholder="ID Profesor"> <br>
+            <input id='calle' name='calle' placeholder="Calle"> <br>
+            <input id='numeroInterior' name='numeroInterior' placeholder="Número Interior"><br>
+            <SELECT NAME="TipoUnidad" id="tipoUnidad">
+                <OPTION VALUE="Departamento"> Departamento
+                <OPTION VALUE="Edificio"> Edificio
+                <OPTION VALUE="Casa"> Casa
+            </SELECT> <br>
+            <input id='numeroExterior' name='numeroExterior' placeholder="# Exterior"><br>
+            <input id='ciudad' name='ciudad' placeholder="Ciudad"><br>
+            <SELECT NAME="Estado" id="estado">
+                <OPTION VALUE="Aguascalientes"> Aguascalientes
+                <OPTION VALUE="Baja California"> Baja California
+                <OPTION VALUE="Baja California Sur"> Baja California Sur
+                <OPTION VALUE="Campeche"> Campeche
+                <OPTION VALUE="Chiapas"> Chiapas
+                <OPTION VALUE="Chihuahua"> Email
+                <OPTION VALUE="Ciudad de México"> Ciudad de México
+                <OPTION VALUE="Coahuila"> Coahuila
+                <OPTION VALUE="Colima"> Colima
+                <OPTION VALUE="Durango"> Durango
+                <OPTION VALUE="Estado de México"> Estado de México
+                <OPTION VALUE="Guanajuato"> Guanajuato
+                <OPTION VALUE="Guerrero"> Guerrero
+                <OPTION VALUE="Hidalgo"> Email
+                <OPTION VALUE="Michoacán"> Michoacán
+                <OPTION VALUE="Morelos"> Morelos
+                <OPTION VALUE="Nayarit"> Nayarit
+                <OPTION VALUE="Nuevo León"> NuevoLeón
+                <OPTION VALUE="Oaxaca"> Oaxaca
+                <OPTION VALUE="Puebla"> Puebla
+                <OPTION VALUE="Querétaro"> Querétaro
+                <OPTION VALUE="Quintana Roo"> QuintanaRoo
+                <OPTION VALUE="San Luis Potosí"> SanLuisPotosí
+                <OPTION VALUE="Sinaloa"> Sinaloa
+                <OPTION VALUE="Sonora"> Sonora
+                <OPTION VALUE="Tabasco"> Tabasco
+                <OPTION VALUE="Tamaulipas"> Tamaulipas
+                <OPTION VALUE="Veracruz"> Veracruz
+                <OPTION VALUE="Yucatán"> Tlaxcala
+                <OPTION VALUE="Zacatecas"> Tlaxcala
+            </SELECT><br>
+            <input id='colonia' name='colonia' placeholder="Colonia"><br>
+
+            <button>Actualizar</button>
+        </form>
+        <p id="message-1"></p>
+    </div>
+    {{>footer}}
+    <script src="/js/actualizarDireccionProfesor.js"></script>
+
+</body>
+</html>

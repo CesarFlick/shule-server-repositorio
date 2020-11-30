@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alumnos</title>
+    <link rel="icon" href="img/alumno.jpg">
+    <link rel="stylesheet" href="/css/style.css"> 
+</head>
+<body>
+    <div class="main-content">
+        {{>header}}
+        {{>profesoresHeader}}
+    <img class="portrait" src="/img/partenon.jpg">
+        <form id="Actualizar">
+            <input id='trabajador' name='trabajador' placeholder="ID Profesor">
+            <SELECT NAME="Dispositivo" id="dispositivo">
+                <OPTION VALUE="Teléfono"> Teléfono
+                <OPTION VALUE="Email"> Email
+            </SELECT>
+            <input id='valor' name='valor' placeholder="# ó email">
+            <button>Actualizar</button>
+        </form>
+        <p id="message-1"></p>
+    </div>
+    {{>footer}}
+    <script src="/js/actualizarContactoProfesor.js"></script>
+
+</body>
+</html>
