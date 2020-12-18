@@ -13,6 +13,7 @@ const desinscribirAlumno = require('./utils/desinscribirAlumno.js')
 const asignarProfesor = require('./utils/asignarProfesor.js')
 const obtenerAlumnos = require('./utils/obtenerAlumnos.js')
 const obtenerProfesores = require('./utils/obtenerProfesores.js')
+const altaAlumno = require('./utils/altaAlumno.js')
 
 
 const app = express()
@@ -37,6 +38,13 @@ app.get('', (req,res) => {
     res.render('index', {
         title: 'Sistema de Gestión Escolar',
         name: 'César Rodríguez'
+    })
+})
+
+app.get('/entrar', (req,res) => {
+    res.render('entrar', {
+        title: 'Ingresar',
+        name: 'César Rodriguez'
     })
 })
 
@@ -75,6 +83,13 @@ app.get('/alumnos', (req,res) => {
 app.get('/alumno/inscribir', (req,res) => {
     res.render('inscripcionCurso', {
         title: 'Alumnos',
+        name: 'César Rodríguez'
+    })
+})
+
+app.get('/alumno/alta', (req,res) => {
+    res.render('altaAlumno', {
+        title: 'Registro',
         name: 'César Rodríguez'
     })
 })
@@ -136,6 +151,12 @@ app.get('/api/cursos', (req,res) => {
 //*********** Endpoint para inscribir un alumno a un curso */
 app.put('/api/alumno', (req,res) => {
     inscribirAlumno(req.query, (response) => {
+    res.send(response)})
+})
+
+//*********** Endpoint para registrar a un alumno en el sistema */
+app.post('/api/alumno/alta', (req,res) => {
+    altaAlumno(req.body, (response) => {
     res.send(response)})
 })
 
@@ -213,5 +234,5 @@ app.get('*', (req,res) => {
 
 
 app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+    console.log('Servidor en puerto 3000.')
 })

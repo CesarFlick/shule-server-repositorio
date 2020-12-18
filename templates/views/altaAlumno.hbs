@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alumnos</title>
+    <link rel="icon" href="img/alumno.jpg">
+    <link rel="stylesheet" href="/css/style.css"> 
+</head>
+<body>
+    <div class="main-content">
+    <H1> Registro </H1>
+    <img class="portrait2" src="/img/ipn.jpg">
+        <form id="Registrarme">
+            <input id='nombre' name='nombre' placeholder="Nombre"> <br>
+            <input id='apellidoMaterno' name='apellidoMaterno' placeholder="Apellido Materno"> <br>
+            <input id='apellidoPaterno' name='apellidoPaterno' placeholder="Apellido Paterno"> <br>
+            <input id='fechaNacimiento' name='fechaNacimiento' placeholder="Fecha de Nacimiento"> <i>Formato: AAAA-MM-DD</i> <br> 
+            <H2>Dirección</H2>
+            <input id='calle' name='calle' placeholder="Calle"> <br>
+            <input id='numInterior' name='numInterior' placeholder="Número Interior"><br>
+            <SELECT NAME="unidad" id="unidad">
+                <OPTION VALUE="Departamento"> Departamento
+                <OPTION VALUE="Edificio"> Edificio
+                <OPTION VALUE="Casa"> Casa
+            </SELECT> <br>
+            <input id='numExterior' name='numExterior' placeholder="# Exterior"><br>
+            <input id='ciudad' name='ciudad' placeholder="Ciudad"><br>
+            <SELECT NAME="Estado" id="estado">
+                <OPTION VALUE="Aguascalientes"> Aguascalientes
+                <OPTION VALUE="Baja California"> Baja California
+                <OPTION VALUE="Baja California Sur"> Baja California Sur
+                <OPTION VALUE="Campeche"> Campeche
+                <OPTION VALUE="Chiapas"> Chiapas
+                <OPTION VALUE="Chihuahua"> Email
+                <OPTION VALUE="Ciudad de México"> Ciudad de México
+                <OPTION VALUE="Coahuila"> Coahuila
+                <OPTION VALUE="Colima"> Colima
+                <OPTION VALUE="Durango"> Durango
+                <OPTION VALUE="Estado de México"> Estado de México
+                <OPTION VALUE="Guanajuato"> Guanajuato
+                <OPTION VALUE="Guerrero"> Guerrero
+                <OPTION VALUE="Hidalgo"> Email
+                <OPTION VALUE="Michoacán"> Michoacán
+                <OPTION VALUE="Morelos"> Morelos
+                <OPTION VALUE="Nayarit"> Nayarit
+                <OPTION VALUE="Nuevo León"> NuevoLeón
+                <OPTION VALUE="Oaxaca"> Oaxaca
+                <OPTION VALUE="Puebla"> Puebla
+                <OPTION VALUE="Querétaro"> Querétaro
+                <OPTION VALUE="Quintana Roo"> QuintanaRoo
+                <OPTION VALUE="San Luis Potosí"> SanLuisPotosí
+                <OPTION VALUE="Sinaloa"> Sinaloa
+                <OPTION VALUE="Sonora"> Sonora
+                <OPTION VALUE="Tabasco"> Tabasco
+                <OPTION VALUE="Tamaulipas"> Tamaulipas
+                <OPTION VALUE="Veracruz"> Veracruz
+                <OPTION VALUE="Yucatán"> Tlaxcala
+                <OPTION VALUE="Zacatecas"> Tlaxcala
+            </SELECT><br>
+
+            <input id='colonia' name='colonia' placeholder="Colonia"><br>
+
+            <H2>Contacto</H2>
+            <input id= 'telefono' name='telefono' placeholder='Teléfono'> <br>
+             
+            <H2>Carrera</H2>
+
+            <SELECT NAME="Carrera" id="carrera">
+                <OPTION VALUE="Actuaria"> Actuaria
+                <OPTION VALUE="Administracion"> Administracion
+                <OPTION VALUE="Administracion Agropecuaria"> Administracion Agropecuaria
+                <OPTION VALUE="Administracion de Archivos y Gestion Documental"> Administracion de Archivos y Gestion Documental
+                <OPTION VALUE="Antropologia"> Antropologia
+                <OPTION VALUE="Arquitectura"> Arquitectura
+                <OPTION VALUE="Arquitectura de Paisaje"> Arquitectura de Paisaje
+                <OPTION VALUE="Arte y Diseno"> Arte y Diseno
+                <OPTION VALUE="Artes Visuales"> Artes Visuales
+            </SELECT> <br> <br>
+
+
+            <button>Registrarme</button>
+        </form>
+        <p id="message-13"></p>
+    </div>
+    <a href="/entrar">Regresar</a>
+    {{>footer}}
+    <script src="/js/altaAlumno.js"></script>
+
+</body>
+</html>
