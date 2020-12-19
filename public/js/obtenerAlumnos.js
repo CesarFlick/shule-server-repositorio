@@ -31,6 +31,7 @@ obtenerAlumno.addEventListener ( 'submit', (e) => {
                     fechaNacimiento.textContent = data.fechaNacimiento
                     carrera.textContent = data.carrera
                     calle.textContent = data.direccion.calle
+                    unidad.textContent = data.direccion.tipoUnidad
                     numInterior.textContent = data.direccion.numeroInterior
                     numExterior.textContent = data.direccion.numeroExterior
                     ciudad.textContent = data.direccion.ciudad

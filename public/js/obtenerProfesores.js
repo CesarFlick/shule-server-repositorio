@@ -38,7 +38,7 @@ obtenerProfesor.addEventListener ( 'submit', (e) => {
                     colonia.textContent = data.direccion.colonia
                     telefono.textContent = data.contacto.telefono
                     email.textContent = data.contacto.email
-
+                    unidad.textContent = data.direccion.tipoUnidad
                })
 })
 })

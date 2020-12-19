@@ -46,6 +46,9 @@ header a {
 
 .portrait {
     width: 250px;
+    padding-inline-end: 30%;
+    width: 650px;
+
 }
 
 .portrait2 {
