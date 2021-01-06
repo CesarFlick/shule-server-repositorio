@@ -14,6 +14,16 @@ const numExterior = document.querySelector('#numExterior')
 const ciudad = document.querySelector('#ciudad')
 const estado = document.querySelector('#estado')
 const colonia = document.querySelector('#colonia')
+let infoCursoTabla = document.querySelector("#tablaCursosAlumno")
+
+function generateTable(table, data) {
+    for (let element of data) {
+        let row = table.insertRow();
+        let cell = row.insertCell();
+        let text = document.createTextNode(element);
+        cell.appendChild(text);
+    }
+  }
 
 obtenerAlumno.addEventListener ( 'submit', (e) => {
     e.preventDefault()
@@ -39,7 +49,7 @@ obtenerAlumno.addEventListener ( 'submit', (e) => {
                     colonia.textContent = data.direccion.colonia
                     telefono.textContent = data.contacto.telefono
                     email.textContent = data.contacto.email
-
+                    generateTable(infoCursoTabla, data.materias);
                })
 })
 })
