@@ -22,7 +22,7 @@ obtenerProfesor.addEventListener ( 'submit', (e) => {
     fetch('http://localhost:3000/api/profesor?numeroEmpleado=' + valores.numeroEmpleado ,{
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }}
-        ).then( (response) => { 
+        ).then( (response) => {
                 console.log(response),
                 response.json().then( (data) => {
                     nombre.textContent = data.Nombre

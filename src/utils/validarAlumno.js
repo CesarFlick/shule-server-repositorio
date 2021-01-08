@@ -1,16 +1,15 @@
 const request = require('request')
 
-const desinscribirAlumno = (datos,callback) => {
+const validarAlumno = (datos,callback) => {
+    console.log(datos)
     request({
-        url: 'http://localhost:8081/api/cursos/' + datos.claveCurso + '/alumno',
-        method: 'DELETE',
-        body: JSON.stringify({ "matricula": datos.matricula }),
+        url: 'http://localhost:8081/api/alumno/' + datos.matricula,
+        method: 'GET',
         headers: {
             'Accept': '*/*',
             'Content-Type': 'application/json'}
     }, (error, {body}) => {
-        console.log(body)
         callback(body)
 })}
 
-module.exports = desinscribirAlumno
+module.exports = validarAlumno

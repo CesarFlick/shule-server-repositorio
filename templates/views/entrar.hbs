@@ -7,10 +7,19 @@
   </div>
   <div class="formLogin">
     <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
-    <form class="formLogin">
-      <input type="matricula" placeholder="Matrícula"/>
+    <form id= "Acceder" class="formLogin">
+      <input id='usuario' type="usuario" placeholder="Matrícula"/>
       <input type="Contraseña" placeholder="Contraseña"/>
-      <a href="/app" id= "Entrar">Entrar</a>
+
+      <a href="/app">
+          <button>Acceder1</button>
+      </a>
+
+      <button>Acceder</button>
+
+      <a href="/app">Entrar</a>
+      <p class="message" id="message-1"></p>
       <p class="message" onclick="location.href='http://localhost:3000'" >No estas registrado? <a href="/alumno/alta">Registrate aquí</a></p>
+      <script src="/js/validarAlumno.js"></script>
     </form>
   </div>

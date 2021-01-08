@@ -10,6 +10,7 @@ const actualizarDireccionAlumno = require('./utils/actualizarDireccion.js')
 const actualizarContactoProfesor = require('./utils/actualizarContactoProfesor.js')
 const actualizarDireccionProfesor = require('./utils/actualizarDireccionProfesor.js')
 const desinscribirAlumno = require('./utils/desinscribirAlumno.js')
+const validarAlumno = require('./utils/validarAlumno')
 const asignarProfesor = require('./utils/asignarProfesor.js')
 const obtenerAlumnos = require('./utils/obtenerAlumnos.js')
 const obtenerProfesores = require('./utils/obtenerProfesores.js')
@@ -47,12 +48,6 @@ app.use(express.static(publicDirectory))
 
 
 app.get('/entrar', (req,res) => {
-    console.log(req)
-    request(8081/validar/alumno);
-    if (1>0) {}
-    else {
-        req.session.user_id = {'matricula':'19900212-ARTRIV-GO14'};
-    }
     res.render('entrar', {
         title: 'Ingresar',
         name: 'César Rodriguez'
@@ -144,6 +139,22 @@ app.put('/api/profesor/asignar', (req,res) => {
         asignarProfesor(req.query, (response) => {
         res.send(response)})
     })
+
+//*********** Endpoint para validar a un alumno*/
+app.get('/api/validar/alumno', (req,res) => {
+        console.log(req.body)
+        validarAlumno(req.query, (response) => {
+            var respuesta = JSON.parse(response)
+            if(respuesta.Nombre == null) {
+                response = {"status":"Verifica tú matricula y contraseña y vuelve a intentar."}
+            } else {
+                req.session.user_id = respuesta.Nombre
+                response = {"status":"Datos correctos"}
+            }
+            console.log(response)
+        res.send(response)})
+    })
+
 
 app.use("/app",session_middleware)
 app.use("/app",router_app)
