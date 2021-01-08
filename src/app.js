@@ -14,6 +14,10 @@ const asignarProfesor = require('./utils/asignarProfesor.js')
 const obtenerAlumnos = require('./utils/obtenerAlumnos.js')
 const obtenerProfesores = require('./utils/obtenerProfesores.js')
 const altaAlumno = require('./utils/altaAlumno.js')
+var session_middleware = require("../public/middlewares/session")
+var router_app = require("./rutas_app")
+var session = require("express-session");
+const { request } = require('http');
 
 
 const app = express()
@@ -23,9 +27,17 @@ const publicDirectory = path.join(__dirname, '../public/')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
+//app.use("/app",router_app)
 //Setup handlebars engine and views location
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use(session({
+    secret: "aodnfporuifh3",
+    resave: false,
+    saveUninitialized: false
+}));
+
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
@@ -34,107 +46,26 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectory))
 
 
-app.get('', (req,res) => {
-    res.render('index', {
-        title: 'Sistema de Gestión Escolar',
-        name: 'César Rodríguez'
-    })
-})
-
 app.get('/entrar', (req,res) => {
+    console.log(req)
+    request(8081/validar/alumno);
+    if (1>0) {}
+    else {
+        req.session.user_id = {'matricula':'19900212-ARTRIV-GO14'};
+    }
     res.render('entrar', {
         title: 'Ingresar',
         name: 'César Rodriguez'
     })
-})
+ })
 
-app.get('/profesores', (req,res) => {
-    res.render('profesores', {
-        title: 'Profesores',
-        name: 'César Rodriguez'
-    })
-})
-
-
-app.get('/ayuda', (req,res) => {
-    res.render('ayuda', {
-        helpText: 'Aquí encontrarás ayuda.',
-        title: 'Ayuda',
-        name: 'César Rodríguez'
-    })
-})
-
-
-app.get('/cursos', (req,res) => {
-    res.render('cursos', {
-        helpText: 'Aquí encontrarás información de las materias.',
-        title: 'Cursos',
-        name: 'César Rodríguez'
-    })
-})
-
-app.get('/alumnos', (req,res) => {
-    res.render('alumnos', {
-        title: 'Alumnos',
-        name: 'César Rodríguez'
-    })
-})
-
-app.get('/alumno/inscribir', (req,res) => {
-    res.render('inscripcionCurso', {
-        title: 'Alumnos',
-        name: 'César Rodríguez'
-    })
-})
-
-app.get('/alumno/alta', (req,res) => {
+ app.get('/alumno/alta', (req,res) => {
     res.render('altaAlumno', {
         title: 'Registro',
         name: 'César Rodríguez'
     })
 })
 
-app.get('/alumno/baja', (req,res) => {
-    res.render('desinscripcionCurso', {
-        title: 'Alumnos',
-        name: 'César Rodríguez'
-    })
-})
-
-app.get('/alumno/contacto', (req,res) => {
-    res.render('actualizarContacto', {
-        title: 'Alumnos',
-        name: 'César Rodríguez'
-    })
-})
-
-app.get('/alumno/direccion', (req,res) => {
-    res.render('actualizarDireccion', {
-        title: 'Alumnos',
-        name: 'César Rodríguez'
-    })
-})
-
-app.get('/profesor/contacto', (req,res) => {
-    res.render('actualizarContactoProfesor', {
-        title: 'Profesores',
-        name: 'César Rodríguez'
-    })
-})
-
-app.get('/profesor/direccion', (req,res) => {
-    res.render('actualizarDireccionProfesor', {
-        title: 'Profesores',
-        name: 'César Rodríguez'
-    })
-})
-
-app.get('/profesor/asignar', (req,res) => {
-    res.render('asignarProfesor', {
-        title: 'Profesores',
-        name: 'César Rodríguez'
-    })
-})
 
 //*************** ENPOINTS HACIA API */
 app.get('/api/cursos', (req,res) => {
@@ -214,14 +145,8 @@ app.put('/api/profesor/asignar', (req,res) => {
         res.send(response)})
     })
 
-app.get('*', (req,res) => {
-    res.render('404', {
-        title: '404',
-        name: 'César Rodríguez',
-        errorMessage: 'Página no encontrada.'
-
-    })
-})
+app.use("/app",session_middleware)
+app.use("/app",router_app)
 
 app.get('*', (req,res) => {
     res.render('404', {
