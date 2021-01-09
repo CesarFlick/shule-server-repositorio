@@ -13,6 +13,7 @@ const numExterior = document.querySelector('#numExterior')
 const ciudad = document.querySelector('#ciudad')
 const estado = document.querySelector('#estado')
 const colonia = document.querySelector('#colonia')
+const contrasena = document.querySelector('#contrasena')
 
 
 const mensajeUno = document.querySelector('#message-13')
@@ -34,7 +35,8 @@ Registrarme.addEventListener ( 'submit', (e) => {
                      estado: estado.value,
                      colonia: colonia.value,
                      telefono: telefono.value,
-                     carrera: carrera.value
+                     carrera: carrera.value,
+                     password: contrasena.value
                     }
 //    console.log(valores)
 //    messageTwo.textContent = 'Cargando ...'
@@ -54,7 +56,9 @@ Registrarme.addEventListener ( 'submit', (e) => {
                               "estado": valores.estado,
                               "colonia": valores.colonia,
                               "telefono": valores.telefono,
-                              "carrera": valores.carrera }),
+                              "carrera": valores.carrera,
+                              "password": valores.password
+                             }),
         headers: { 'Content-Type': 'application/json' }}
         ).then( (response) => {
             var variable = response

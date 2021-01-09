@@ -7,19 +7,17 @@
   </div>
   <div class="formLogin">
     <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
-    <form id= "Acceder" class="formLogin">
-      <input id='usuario' type="usuario" placeholder="Matrícula"/>
-      <input type="Contraseña" placeholder="Contraseña"/>
+    <form  action="http://localhost:3000/api/validar/alumno" id= "Acceder" class="formLogin" method= "GET">
+      
+      <label for="matricula"></label><br>
+      <input type="text" id="matricula" name="matricula" placeholder="Matrícula">
 
-      <a href="/app">
-          <button>Acceder1</button>
-      </a>
+      <label for="registro"></label><br>
+      <input name="registro" id='registro' type="text" placeholder="Contraseña"/>
 
       <button>Acceder</button>
 
-      <a href="/app">Entrar</a>
       <p class="message" id="message-1"></p>
       <p class="message" onclick="location.href='http://localhost:3000'" >No estas registrado? <a href="/alumno/alta">Registrate aquí</a></p>
-      <script src="/js/validarAlumno.js"></script>
     </form>
   </div>

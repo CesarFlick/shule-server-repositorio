@@ -25,7 +25,8 @@ const altaAlumno = (inputBody,callback) => {
                         "tipo": "Telefono",
                         "valor": inputBody.telefono
                       },
-            "carrera": inputBody.carrera
+            "carrera": inputBody.carrera,
+            "password": inputBody.password
           }),
         headers: {
             'Accept': '*/*',

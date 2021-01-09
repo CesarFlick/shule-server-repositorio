@@ -142,17 +142,17 @@ app.put('/api/profesor/asignar', (req,res) => {
 
 //*********** Endpoint para validar a un alumno*/
 app.get('/api/validar/alumno', (req,res) => {
-        console.log(req.body)
+        console.log(req.query)
         validarAlumno(req.query, (response) => {
             var respuesta = JSON.parse(response)
             if(respuesta.Nombre == null) {
+                res.redirect('http://localhost:3000/entrar');
                 response = {"status":"Verifica tú matricula y contraseña y vuelve a intentar."}
             } else {
                 req.session.user_id = respuesta.Nombre
-                response = {"status":"Datos correctos"}
+                res.redirect('http://localhost:3000/app');
             }
-            console.log(response)
-        res.send(response)})
+       })
     })
 
 
